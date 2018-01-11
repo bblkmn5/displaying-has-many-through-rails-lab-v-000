@@ -1,0 +1,8 @@
+<h1>Add Appointment</h1>
+
+<%= form_for @appointment do |f| %>
+    <%= f.datetime_select :appointment_datetime %><br><br>
+    Doctor:<%= f.collection_select :doctor, Doctor.all, :id, :name %><br><br>
+    Patient:<%= f.collection_select :patient, Patient.all, :id, :name %><br /><br>
+    <%= f.submit %>
+<% end %>
